@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- ADD META TAGS -->
+      <meta charset="utf-8"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"></meta>
+      <meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
+      <meta name="keywords" content="PyLadies, PyLady, kurz, sraz, programování, IT, python, workshop, slečny, ženy"></meta>
+      <meta name="description" content="České PyLadies - týdenní srazy a kurzy pro holky, slečny či ženy co se chtějí učit programovat v Pythonu. Momentálně v Praze a Brně."></meta>
+      <meta property="og:title" content="PyLadies CZ"></meta>
+      <meta property="og:type" content="article"></meta>
+      <meta property="og:image" content="https://github.com/PyLadiesCZ/pyladies.cz/blob/master/static/img/bg/intro.jpg"></meta>
+      <meta property="og:url" content="www.pyladies.cz"></meta>
+      <meta property="og:description" content="České PyLadies - týdenní srazy a kurzy pro holky, slečny či ženy co se chtějí učit programovat v Pythonu. Momentálně v Praze a Brně. Pro přehled otevřených kurzů sleduj náš web www.pyladies.cz"></meta>
+      <meta name="twitter:card" content="summary"></meta>
+      <meta name="twitter:title" content="PyLadies CZ"></meta>
+      <meta name="twitter:site" content="@PyLadiesCZ"></meta>
+      <meta name="twitter:description" content="České PyLadies - týdenní srazy a kurzy pro holky, slečny či ženy co se chtějí učit programovat v Pythonu. Momentálně v Praze a Brně. Pro přehled otevřených kurzů sleduj náš web www.pyladies.cz"></meta>
+      <meta name="twitter:image" content="https://github.com/PyLadiesCZ/pyladies.cz/blob/master/static/img/bg/intro.jpg"></meta>
+
+      <title>Úvod do příkazové řádky – PyLadies CZ</title>
+
+      
+    
+        <!-- Bootstrap CSS -->
+        <link href="../../_static/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="../../_static/css/custom.css" rel="stylesheet">
+        <link href="../../_static/css/responsive.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="../../_static/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700&subset=latin,greek,greek-ext,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+      
+    <link href="../../_static/css/course.css" rel="stylesheet">
+
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href="../../_static/img/favicon.ico" />
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Zeerat tracking code for pyladies.cz -->
+    	<script>
+    		(function(t,r,a,c,k,i,n,g){
+    			t[k]=t[k]||{t:1*new Date(),k:i};
+    			n=r.createElement(a),g=r.getElementsByTagName(a)[0];
+    			n.async=1;n.src=c;g.parentNode.insertBefore(n,g)
+    		})(window,document,'script','//cdn.zeerat.com/track.js','Zeerat','R3c4yUSA');
+    	</script>
+    <!-- End Zeerat code -->
+    </head>
+
+    <body id="page-top" data-spy="scroll" data-target="">
+      <!-- Navigation -->
+      <nav class="navbar navbar-custom" role="navigation">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                      <i class="fa fa-bars"></i>
+                  </button>
+                  <a class="navbar-brand page-scroll" href="../../">
+                      <img class="logo-i" src="../../_static/img/pyladies.png" />
+                  </a>
+              </div>
+              <div class="navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Města
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                              <li><a href="../../brno_info/">Brno</a></li>
+                              <li><a href="../../praha_info/">Praha</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materiály
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../../brno/">Brno</a></li>
+                            <li><a href="../../praha/">Praha</a></li>
+                           <!-- <li role="separator" class="divider"></li>
+                            <li><a href="#">Všechny</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="join">
+                      <a href="../index.html#main-course">Staň se PyLady!</a>
+                    </li>
+                    <li>
+                      <a href="mailto:valkova.zuza@seznam.cz">Napiš nám</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+      <!-- Intro Header -->
+      <header class="intro-info intro-material">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                        <p class="intro-text-city">
+                            <span class="smaller">Úvod do příkazové řádky</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Material section -->
+    <section class="material container" id="material">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="section" id="uvod-do-prikazove-radky">
+<h1>Úvod do příkazové řádky<a class="headerlink" href="#uvod-do-prikazove-radky" title="Trvalý odkaz na tento nadpis">¶</a></h1>
+<p>Než začneme programovat, bude dobré se seznámit s <em>příkazovou řádkou</em> – tím
+černým okýnkem, které programátoři používají na zadávání příkazů.
+Na první pohled může vypadat nepřirozeně, ale dá se na ni zvyknout :)</p>
+<p>Příkazová řádka
+(respektive program, kterému se říká i <em>konzole</em> či <em>terminál</em>;
+anglicky <em>command line</em>, <em>console</em>, <em>terminal</em>)
+se na různých systémech otevírá různě:</p>
+<ul class="simple">
+<li><strong>Windows</strong> (české): Start → Všechny programy → Příslušenství → Příkazový řádek</li>
+<li><strong>Windows</strong> (anglické): Start → All Programs → Accessories → Command Prompt</li>
+<li><strong>Mac OS X</strong> (anglické): Applications → Utilities → Terminal</li>
+<li><strong>Linux</strong> (KDE): Hlavní Menu → hledat Konsole</li>
+<li><strong>Linux</strong> (Gnome): Super → hledat Terminál</li>
+</ul>
+<p>Nevíš-li si rady, zkus buď googlit, nebo se jednoduše zeptat
+(na sraze kouče, jinak e-mailem).</p>
+<p>Po otevření konzole tě uvítá řádek,
+kterým počítač vybízí k zadání příkazu.
+Podle systému bude končit buď znakem <code class="docutils literal"><span class="pre">$</span></code> nebo <code class="docutils literal"><span class="pre">&gt;</span></code>,
+před nímž můžou být ještě další informace:</p>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix (Linux, OS X)</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="prvni-prikaz">
+<h2>První příkaz<a class="headerlink" href="#prvni-prikaz" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Začneme jednoduchým příkazem.
+Napiš <code class="docutils literal"><span class="pre">whoami</span></code> (z angl. <em>who am I?</em> – kdo jsem?)
+a stiskni Enter.
+Objeví se přihlašovací jméno. U mě to vypadá takhle:</p>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ whoami
+helena
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt; whoami
+pocitac\helena
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Poznámka</p>
+<p>Znak <code class="docutils literal"><span class="pre">$</span></code> nebo <code class="docutils literal"><span class="pre">&gt;</span></code> je v ukázce jen proto, aby bylo jasné že zadáváme
+příkaz do příkazové řádky.
+Vypíše ho sám počítač (většinou ještě s něčím před ním),
+takže ho nepiš sama! Zadej jen <code class="docutils literal"><span class="pre">whoami</span></code> a Enter.</p>
+<p class="last">Stejně tak počítač sám vypíše přihlašovací jméno.</p>
+</div>
+</div>
+<div class="section" id="aktualni-adresar">
+<h2>Aktuální adresář<a class="headerlink" href="#aktualni-adresar" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Příkazová řádka pracuje vždy v nějakém <em>adresáři</em> neboli složce
+(angl. <em>directory</em>, <em>folder</em>).
+Ve kterém adresáři zrovna je, to nám poví příkaz <code class="docutils literal"><span class="pre">pwd</span></code> nebo <code class="docutils literal"><span class="pre">cd</span></code>
+(z angl. <em>print working directory</em> – vypiš pracovní adresář,
+resp. <em>current directory</em> – aktuální adresář).</p>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ pwd
+/home/helena/
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt; cd
+C:\Users\helena
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Poznámka</p>
+<p class="last">Aktuální adresář se většinou ukazuje i přímo před znakem <code class="docutils literal"><span class="pre">$</span></code> nebo <code class="docutils literal"><span class="pre">&gt;</span></code>,
+ale je dobré <code class="docutils literal"><span class="pre">pwd</span></code>/<code class="docutils literal"><span class="pre">cd</span></code> znát,
+kdyby ses náhodou ztratila.</p>
+</div>
+</div>
+<div class="section" id="co-v-tom-adresari-je">
+<h2>Co v tom adresáři je?<a class="headerlink" href="#co-v-tom-adresari-je" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Příkaz <code class="docutils literal"><span class="pre">ls</span></code> nebo <code class="docutils literal"><span class="pre">dir</span></code> (z angl. <em>list</em> – vyjmenovat; <em>directory</em> – adresář)
+nám vypíše, co aktuální adresář obsahuje – všechny soubory,
+včetně podadresářů, které se v aktuálním adresáři nacházejí.</p>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ ls
+Applications
+Desktop
+Downloads
+Music
+...
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt; dir
+Directory of C:\Users\helena
+05/08/2014 07:28 PM &lt;DIR&gt;      Applications
+05/08/2014 07:28 PM &lt;DIR&gt;      Desktop
+05/08/2014 07:28 PM &lt;DIR&gt;      Downloads
+05/08/2014 07:28 PM &lt;DIR&gt;      Music
+...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="zmena-aktualniho-adresare">
+<h2>Změna aktuálního adresáře<a class="headerlink" href="#zmena-aktualniho-adresare" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Aktuální adresář se dá změnit pomocí příkazu <code class="docutils literal"><span class="pre">cd</span></code>
+(z angl. <em>change directory</em> – změnit adresář).
+Za <code class="docutils literal"><span class="pre">cd</span></code> se píše jméno adresáře, kam chceme přejít – pokud máš
+adresář <em>Desktop</em> nebo <em>Plocha</em>, přejdi tam.
+Pak nezapomeň  ověřit, že jsi na správném místě.</p>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix</strong>:</p>
+<div class="admonition note">
+<p class="first admonition-title">Poznámka</p>
+<p class="last">Unix rozeznává u adresářů a souborů velikost písmen:
+<code class="docutils literal"><span class="pre">Desktop</span></code> a <code class="docutils literal"><span class="pre">desktop</span></code> není to samé.</p>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ cd Desktop
+$ pwd
+/home/helena/Desktop
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="admonition note">
+<p class="first admonition-title">Poznámka</p>
+<p class="last">(<code class="docutils literal"><span class="pre">cd</span></code> jsme už viděly; ale předtím jsme nepsaly nic za něj)</p>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt; cd Desktop
+
+&gt; cd
+C:\Users\helena\Desktop
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Poznámka</p>
+<p>Pokud přecházíš do adresáře na jiném disku,
+například D: místo C:, je potřeba <em>před</em> <code class="docutils literal"><span class="pre">cd</span></code>
+zadat jméno disku jako zvláštní příkaz:</p>
+<div class="last highlight-none"><div class="highlight"><pre><span></span>&gt; cd D:\blabla
+&gt; D:
+&gt; cd
+D:\blabla
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="vytvoreni-adresare">
+<h2>Vytvoření adresáře<a class="headerlink" href="#vytvoreni-adresare" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Co takhle si vytvořit adresář na PyLadies?
+To se dělá příkazem <code class="docutils literal"><span class="pre">mkdir</span></code>
+(z angl. <em>make directory</em> – vytvořit adresář).</p>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ mkdir pyladies
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt; mkdir pyladies
+</pre></div>
+</div>
+</div>
+<p>Potom, co adresář vytvoříš, se zkus zkontrolovat, že tam opravdu je.
+Můžeš to udělat buď příkazem <code class="docutils literal"><span class="pre">dir</span></code>/<code class="docutils literal"><span class="pre">pwd</span></code>, nebo i z grafického programu,
+kterým normálně hledáš na počítači soubory!</p>
+</div>
+<div class="section" id="ukol">
+<h2>Úkol<a class="headerlink" href="#ukol" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Zkus v nově vytvořeném adresáři <cite>pyladies</cite> vytvořit adresář <cite>test</cite>,
+a zkontrolovat že se opravdu vytvořil.</p>
+<p>Budou se hodit příkazy <cite>cd</cite>, <cite>mkdir</cite>, <cite>ls</cite> či <cite>dir</cite>.</p>
+</div>
+<div class="section" id="reseni">
+<h2>Řešení<a class="headerlink" href="#reseni" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ cd pyladies
+$ mkdir test
+$ ls
+test
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt; cd pyladies
+&gt; mkdir test
+&gt; dir
+05/08/2014 07:28 PM &lt;DIR&gt;      test
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="uklid">
+<h2>Úklid<a class="headerlink" href="#uklid" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Teď vytvořené adresáře zase smažeme. Nemůžeme ale smazat adresář, ve kterém
+jsme, takže se vrátíme na <cite>Desktop</cite>.
+Nadřazený adresář (ten, který obsahuje ten aktuální), se značí dvěma tečkami:</p>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ cd ..
+$ pwd
+/home/helena/Desktop
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt; cd ..
+&gt; cd
+/home/helena/Desktop
+</pre></div>
+</div>
+</div>
+<p>A nakonec smažeme vytvořený adresář <cite>pyladies</cite>.
+K tomu použijeme příkaz <cite>rm</cite> nebo <cite>rmdir</cite>
+(z <em>remove</em> – odstraň, resp. <em>remove directory</em> – odstraň adresář).</p>
+<div class="admonition warning">
+<p class="first admonition-title">Varování</p>
+<p class="last">Pozor, příkazová řádka nepoužívá odpadkový koš!
+Všechno se nadobro smaže, takže si dobře překontroluj, že mažeš správný
+adresář.</p>
+</div>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ pwd
+/home/helena/Desktop
+$ rm -rv pyladies
+removed directory: ‘pyladies’
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt; cd
+/home/helena/Desktop
+&gt; rmdir /S pyladies
+pyladies, Are you sure &lt;Y/N&gt;? Y
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="konec">
+<h2>Konec<a class="headerlink" href="#konec" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>A to je vše! Můžeš příkazovou řádku zavřít.
+To se dělá příkazem <cite>exit</cite>.</p>
+<div class="col-md-6 os-unix container">
+<p><strong>Unix</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>$ exit
+</pre></div>
+</div>
+</div>
+<div class="col-md-6 os-windows container">
+<p><strong>Windows</strong>:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&gt; exit
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="maly-seznam-prikazu">
+<h2>Malý seznam příkazů<a class="headerlink" href="#maly-seznam-prikazu" title="Trvalý odkaz na tento nadpis">¶</a></h2>
+<p>Tady je tabulka základních příkazů.</p>
+<table border="1" class="table table-striped docutils">
+<colgroup>
+<col width="11%" />
+<col width="14%" />
+<col width="26%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Příkaz (Unix)</th>
+<th class="head">Příkaz (Windows)</th>
+<th class="head">Popis</th>
+<th class="head">Příklad použití</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>exit</td>
+<td>exit</td>
+<td>ukončení</td>
+<td><code class="docutils literal"><span class="pre">exit</span></code></td>
+</tr>
+<tr class="row-odd"><td>cd</td>
+<td>cd</td>
+<td>změna adresáře</td>
+<td><code class="docutils literal"><span class="pre">cd</span> <span class="pre">test</span></code></td>
+</tr>
+<tr class="row-even"><td>ls</td>
+<td>dir</td>
+<td>výpis adresáře</td>
+<td><code class="docutils literal"><span class="pre">ls</span></code></td>
+</tr>
+<tr class="row-odd"><td>cp</td>
+<td>copy</td>
+<td>kopírování souboru</td>
+<td><code class="docutils literal"><span class="pre">cp</span> <span class="pre">/home/helena/test/test.txt</span> <span class="pre">/home/helena/test/kopie_test.txt</span></code></td>
+</tr>
+<tr class="row-even"><td>mv</td>
+<td>move</td>
+<td>přesun (nebo přejmenování) souboru</td>
+<td><code class="docutils literal"><span class="pre">mv</span> <span class="pre">/home/helena/test/a.txt</span> <span class="pre">/home/helena/test/b.txt</span></code></td>
+</tr>
+<tr class="row-odd"><td>mkdir</td>
+<td>mkdir</td>
+<td>vytvoření adresáře</td>
+<td><code class="docutils literal"><span class="pre">mkdir</span> <span class="pre">test</span></code></td>
+</tr>
+<tr class="row-even"><td>rm</td>
+<td>del</td>
+<td>smazání souboru</td>
+<td><code class="docutils literal"><span class="pre">rm</span> <span class="pre">test.txt</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Příkazů existuje jich samozřejmě daleko víc,
+pro dnešek nám ale budou stačit tyhle.
+Jen jeden ještě přidáme – příkaz <code class="docutils literal"><span class="pre">python</span></code>.</p>
+<p>Nejdřív ho ale musíme <span class="xref doc">nainstalovat</span>.</p>
+<div class="c-footer container">
+<p>Přeloženo z <a class="reference external" href="http://tutorial.djangogirls.org/intro_to_command_line/README.html">tutoriálu Django Girls</a>.</p>
+<p>Licence: <a class="reference external" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a></p>
+<p>Pro PyLadies Brno napsal Petr Viktorin.</p>
+</div>
+</div>
+</div>
+
+      </div>
+    </section>
+
+    
+    <footer>
+        <div class="container text-left">
+            <p class="pull-left copy">
+              PyLadies CZ jsou součástí <a href="http://pyladies.com">mezinárodních PyLadies</a>.
+            </p>
+            <ul class="pull-right list-inline">
+                <li>
+                    <a href="https://twitter.com/pyladiescz">
+                        <img class="social" src="../../_static/img/icon/twitter.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/pyladiescz">
+                        <img class="social" src="../../_static/img/icon/github.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/groups/pyonieri/">
+                        <img class="social" src="../../_static/img/icon/facebook.png" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+    
+        <!-- jQuery -->
+        <script src="../../_static/js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../../_static/js/bootstrap.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="../../_static/js/jquery.easing.min.js"></script>
+        <!-- Custom JavaScript -->
+        <script src="../../_static/js/custom.js"></script>
+    
+</body>
+</html>
